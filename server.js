@@ -1,5 +1,6 @@
 // always port 8080
 var http = require('http');
+var path = require('path');
 var express = require('express');
 var app = express();
 
@@ -14,11 +15,13 @@ var app = express();
 
 // user agent contains... operating system?
 // -> 'user-agent': 
-// 'Mozilla/5.0 (X11; CrOS x86_64 8872.76.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.105 Safari/537.36',
+// 'Mozilla/5.0 (X11; CrOS x86_64 8872.76.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.105 Safari/537.36'
 
+app.use(express.static(path.resolve(__dirname, 'static')));
 
-var server = http.createServer(function(req, res){
+app.get('/lol', function(req, res){
     
+    /*
     var headers = req.headers;
     
     //return this object as JSON
@@ -29,6 +32,9 @@ var server = http.createServer(function(req, res){
     
     res.send(JSON.stringify(objeto));
     res.end();
+    
+    */
+    res.end('lol');
 })
 
-server.listen(process.env.PORT || 8080);
+http.createServer(app).listen(process.env.PORT || 8080);
