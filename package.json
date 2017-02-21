@@ -12,9 +12,6 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.14.1"
-  },
   "bugs": {
     "url": "https://github.com/Nocho/req-header-parser-fcc/issues"
   },
