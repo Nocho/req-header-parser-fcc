@@ -1,0 +1,19 @@
+{
+  "name": "req-header-parser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nocho/req-header-parser-fcc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nocho/req-header-parser-fcc/issues"
+  },
+  "homepage": "https://github.com/Nocho/req-header-parser-fcc#readme"
+}
