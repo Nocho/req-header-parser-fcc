@@ -25,11 +25,11 @@ app.get('/lol', function(req, res){
     /* 
     - need a regex to match a string up to but not including the comma in 
     req.headers['accept-language']
-    -->  /.^(?=,)/
+    -->  /.+(?=,)/
     
     - need a regex to match the first string between parentheses in 
     req.headers['user-agent']..
-    -->  /[^(].+(?=\))/
+    -->  /[(].+?(?=\))/
     
     */
     
