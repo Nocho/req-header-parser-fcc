@@ -42,9 +42,6 @@ app.get('/lol', function(req, res){
     
     res.send(JSON.stringify(objecto));
     res.end();
-    
-    console.log(req.headers);
-    res.end('lol');
 })
 
 http.createServer(app).listen(process.env.PORT || 8080);
