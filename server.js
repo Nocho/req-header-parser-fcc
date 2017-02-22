@@ -5,9 +5,10 @@ var express = require('express');
 var app = express();
 
 //how do I get  IP address, language and operating system for user's browser?
-// example output 
+// example output
 // {"ipaddress":"96.59.204.145","language":"en-US","software":"X11; CrOS x86_64 8872.76.0"}
 
+//req.headers object
 // x-forwarded-for contains ip... '96.59.204.145'
 
 // accept-language contains language.. 'en-us', what other abbreviations?
@@ -21,7 +22,6 @@ app.use(express.static(path.resolve(__dirname, 'static')));
 
 app.get('/lol', function(req, res){
     
-    
     /* 
     - need a regex to match a string up to but not including the comma in 
     req.headers['accept-language']
@@ -30,7 +30,6 @@ app.get('/lol', function(req, res){
     - need a regex to match the first string between parentheses in 
     req.headers['user-agent']..
     -->  /[(].+?(?=\))/
-    
     */
     
     var headers = req.headers;
