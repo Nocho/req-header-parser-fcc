@@ -21,19 +21,30 @@ app.use(express.static(path.resolve(__dirname, 'static')));
 
 app.get('/lol', function(req, res){
     
-    /*
+    
+    /* 
+    - need a regex to match a string up to but not including the comma in 
+    req.headers['accept-language']
+    -->  /.^(?=,)/
+    
+    - need a regex to match the first string between parentheses in 
+    req.headers['user-agent']..
+    -->  /[^(].+(?=\))/
+    
+    */
+    
     var headers = req.headers;
     
     //return this object as JSON
-    var objeto = {};
-    objeto.IPaddress = headers['x-forwarded-for'];
-    objeto.lang = headers['accept-language'];
-    objeto.softare = headers['user-agent'];
+    var objecto = {};
+    objecto.ipAddress = headers['x-forwarded-for'];
+    objecto.lang = headers['accept-language'].match(/.+(?=,)/)[0];
+    objecto.software = headers['user-agent'].match( /[(].+?(?=\))/ )[0].slice(1);
     
-    res.send(JSON.stringify(objeto));
+    res.send(JSON.stringify(objecto));
     res.end();
     
-    */
+    console.log(req.headers);
     res.end('lol');
 })
 
